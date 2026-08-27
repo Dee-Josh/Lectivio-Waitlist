@@ -2,23 +2,29 @@ import React, { useState } from "react";
 import { submitWaitlistEntry } from "../firebase";
 import "./Landing.css";
 
-// import {
-//   BookOpen, Clock, BarChart3, Lightbulb, Calendar, ClipboardCheck,
-//   CheckCircle2, Users, LineChart, Download, Sparkles, ChevronRight,
-//   ChevronLeft, X, Menu
-// } from "lucide-react";
+import {
+  BookOpen, Clock, BarChart3, Lightbulb, Calendar, ClipboardCheck,
+  CheckCircle2, Users, LineChart, Download, Sparkles, ChevronRight,
+  ChevronLeft, X, Menu
+} from "lucide-react";
+
+import dashboardImage from "../assets/dashboard.png";
+import devicesImage from "../assets/devices.png";
+import appleImage from "../assets/apple.png";
+import webImage from "../assets/web.png";
+import playstoreImage from "../assets/playstore.png";
 
 // <Clock size={20} color="#4F46E5" />
 
 const FEATURES = [
-  { title: "Smart Attendance", desc: "Take and manage attendance easily, anywhere.", icon: `<Calendar size={20} color="#4F46E5" />` },
-  { title: "Assessment Management", desc: "Create, organize and grade assignments, tests and exams.", icon: `<ClipboardCheck size={20} color="#4F46E5" />` },
-  { title: "Automatic Grading", desc: "Fast score calculation and gradebook management.", icon: `<CheckCircle2 size={20} color="#4F46E5" />` },
-  { title: "Student Management", desc: "Keep your student records organized and up to date.", icon: `<Users size={20} color="#4F46E5" />` },
-  { title: "Course Management", desc: "Manage courses, materials and announcements.", icon: `<BookOpen size={20} color="#4F46E5" />` },
-  { title: "Analytics & Insights", desc: "Track performance and make data-driven decisions.", icon: `<LineChart size={20} color="#4F46E5" />` },
-  { title: "Export & Reports", desc: "Export results and reports in one click.", icon: `<Download size={20} color="#4F46E5" />` },
-  { title: "AI Teaching Assistant", desc: "Get AI-powered help for lesson planning and more.", soon: true , icon: `<Sparkles size={20} color="#7C3AED" />` },
+  { title: "Smart Attendance", desc: "Take and manage attendance easily, anywhere.", },
+  { title: "Assessment Management", desc: "Create, organize and grade assignments, tests and exams.", },
+  { title: "Automatic Grading", desc: "Fast score calculation and gradebook management.", },
+  { title: "Student Management", desc: "Keep your student records organized and up to date.", },
+  { title: "Course Management", desc: "Manage courses, materials and announcements.", },
+  { title: "Analytics & Insights", desc: "Track performance and make data-driven decisions.", },
+  { title: "Export & Reports", desc: "Export results and reports in one click.", },
+  { title: "AI Teaching Assistant", desc: "Get AI-powered help for lesson planning and more.", soon: true, },
 ];
 
 const FEATURE_CHOICES = [
@@ -107,17 +113,17 @@ export default function Landing() {
 
           <div className="hero-points">
             <div>
-                <p><Clock size={20} color="#4F46E5" /></p>
+                <p className="landing-icon"><Clock size={30} className="landing-icon" color="#4F46E5" /></p>
               <div className="hero-point-title">Save Time</div>
               <div className="hero-point-desc">Automate repetitive academic tasks.</div>
             </div>
             <div>
-                <p><BarChart3 size={20} color="#4F46E5" /></p>
+                <p className="landing-icon"><BarChart3 size={30} className="landing-icon" color="#4F46E5" /></p>
               <div className="hero-point-title">Stay Organized</div>
               <div className="hero-point-desc">Manage courses, students and records in one place.</div>
             </div>
             <div>
-              <p><Lightbulb size={20} color="#4F46E5" /></p>  
+              <p className="landing-icon"><Lightbulb size={30} className="landing-icon" color="#4F46E5" /></p>  
               <div className="hero-point-title">Make Better Decisions</div>
               <div className="hero-point-desc">Get insights that help you track performance.</div>
             </div>
@@ -149,7 +155,7 @@ export default function Landing() {
             </div>
             <div className="dashboard-footer">Save hours every week on admin →</div>
           </div> */}
-          <img className="dashboard-image" src="src\assets\dashboard.png" alt="Dashboard Image" />
+          <img className="dashboard-image" src={dashboardImage} alt="Dashboard Image" />
         </div>
       </section>
 
@@ -158,10 +164,18 @@ export default function Landing() {
         <span className="eyebrow">FEATURES</span>
         <h2>Everything you need, all in one place.</h2>
         <div className="features-grid">
-          {FEATURES.map((f) => (
+          {FEATURES.map((f, index) => (
             <div key={f.title} className="feature-item">
               <div className="feature-icon">
-                <span>{f.icon}</span>
+                {/* <p>{f.icon}</p> */}
+                {index === 0 && <p><Calendar size={20} color="#4F46E5" /></p>}
+                {index === 1 && <p><ClipboardCheck size={20} color="#4F46E5" /></p>}
+                {index === 2 && <p><CheckCircle2 size={20} color="#4F46E5" /></p>}
+                {index === 3 && <p><Users size={20} color="#4F46E5" /></p>}
+                {index === 4 && <p><BookOpen size={20} color="#4F46E5" /></p>}
+                {index === 5 && <p><LineChart size={20} color="#4F46E5" /></p>}
+                {index === 6 && <p><Download size={20} color="#4F46E5" /></p>}
+                {index === 7 && <p><Sparkles size={20} color="#7C3AED" /></p>}
               </div>
               <div>
                 <div className="feature-title">
@@ -247,18 +261,18 @@ export default function Landing() {
             </p>
             <div className="landing-platform-badges">
                 <div className="landing-platform-badge">
-                    <span>🌐</span> Web App <small>Access in browser</small>
+                    <span><img src={webImage} alt="" /></span> Web App <small>Access in browser</small>
                 </div>
                 <div className="landing-platform-badge soon">
-                    <span>📱</span> Google Play <small>Coming soon</small>
+                    <span><img src={playstoreImage} alt="" /></span> Google Play <small>Coming soon</small>
                 </div>
                 <div className="landing-platform-badge soon">
-                    <span>🍎</span> App Store <small>Coming soon</small>
+                    <span><img src={appleImage} alt="" /></span> App Store <small>Coming soon</small>
                 </div>
             </div>
         </div>
         <div className="landing-platform-image">
-            <img src="./src/assets/devices.png" alt="Lectivio across different devices" />
+            <img src={devicesImage} alt="Lectivio across different devices" />
         </div>
       </section>
 
