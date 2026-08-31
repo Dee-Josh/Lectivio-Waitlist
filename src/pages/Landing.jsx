@@ -105,7 +105,7 @@ export default function Landing() {
       {/* ---------- Hero ---------- */}
       <section className="hero">
         <div className="hero-copy">
-          <span className="eyebrow">For Lecturers. By Innovation.</span>
+          <span className="eyebrow">Built for Lecturers.</span>
           <h1>Your Virtual<br /><span className="text-indigo">Teaching Assistant</span></h1>
           <p className="hero-sub">
             Spend less time on administration and more time teaching, inspiring and making impact.
@@ -276,8 +276,16 @@ export default function Landing() {
         </div>
       </section>
 
+       <section className="landing-cta" id="footer">
+        <div>
+          <h2>Ready to transform your teaching?</h2>
+          <p>Join lecturers saving time and reducing admin stress with Lectivio.</p>
+        </div>
+        < button  onClick={openFlow} className="primary-btn large light">Get Started →</button>
+      </section>
+
       <footer className="footer">
-        © {new Date().getFullYear()} Lectivio. Built for lecturers, by innovation.
+        © {new Date().getFullYear()} Lectivio. Built for lecturers.
       </footer>
 
       {/* ---------- Waitlist modal ---------- */}
