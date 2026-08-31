@@ -52,6 +52,10 @@
   display: flex; align-items: center; justify-content: center; font-weight: 800;
   background: linear-gradient(135deg, var(--indigo), var(--violet));
 }
+
+.logo-mark img{
+  width: 32px; height: 32px;
+}
 .nav-links { display: none; gap: 32px; font-size: 14px; color: var(--slate-600); }
 .nav-links a:hover { color: var(--indigo); }
 .menu-toggle { display: block; background: none; border: none; font-size: 20px; cursor: pointer; }

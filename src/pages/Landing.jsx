@@ -81,7 +81,7 @@ export default function Landing() {
       <header className="header">
         <div className="header-inner">
           <div className="logo">
-            <div className="logo-mark">L</div>
+            <div className="logo-mark"><img src="/lectivio-logo.png" alt="" /></div>
             Lectivio
           </div>
           <nav className="nav-links">
