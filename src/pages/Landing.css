@@ -340,8 +340,12 @@
 
 @media (max-width: 600px) {
   .landing-platform-badge img{
-  width: 30px;
-}
+    width: 30px;
+  }
+
+  .landing-platform-badge {
+    min-width: none;
+  }
 }
 
 .landing-platform-badge small {
