@@ -372,6 +372,11 @@
   .landing-platform-badge small {
     font-size: .4rem;
   }
+
+  .landing-platform-badges {
+    flex-wrap: nowrap;
+  }
+
 }
 
 .text-accent {
