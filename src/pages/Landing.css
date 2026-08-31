@@ -342,10 +342,6 @@
   .landing-platform-badge img{
     width: 30px;
   }
-
-  .landing-platform-badge {
-    min-width: none;
-  }
 }
 
 .landing-platform-badge small {
@@ -366,8 +362,8 @@
   .landing-platform-badge {
     font-size: .6rem;
     gap: 0;
-    min-width: none;
-    padding: 5px;
+    min-width: 0;
+    padding: 5px 10px;
   }
   .landing-platform-badge small {
     font-size: .4rem;
