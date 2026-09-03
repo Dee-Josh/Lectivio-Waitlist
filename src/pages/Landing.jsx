@@ -36,7 +36,7 @@ const FEATURE_CHOICES = [
 const NAV_LINKS = ["Features", "Roadmap", "About", "FAQ"];
 
 const initialForm = {
-  fullName: "", email: "", institution: "", department: "",
+  fullName: "", email: "", number: "", institution: "", department: "",
   courses: "", classSize: "", challenge: "",
   wantedFeatures: [], wouldUse: "", wouldReceive: "", whichPlatform: "",  otherFeatures: "",
 };
@@ -305,6 +305,10 @@ export default function Landing() {
                 <Field label="Email Address">
                   <input className="input" type="email" value={form.email}
                     onChange={(e) => update("email", e.target.value)} placeholder="ada@university.edu" />
+                </Field>
+                <Field label="Whatsapp Number">
+                  <input className="input" type="number" value={form.number}
+                    onChange={(e) => update("number", e.target.value)} placeholder="09010000001" />
                 </Field>
                 <Field label="Institution">
                   <input className="input" value={form.institution}
