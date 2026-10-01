@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { submitWaitlistEntry } from "../firebase";
+import { submitWaitlistEntry, sendToGoogleSheet } from "../firebase";
 import "./Landing.css";
 
 import {
@@ -50,7 +50,10 @@ export default function Landing() {
   const [menuOpen, setMenuOpen] = useState(false);
 
   const openFlow = () => { setStep(1); setError(""); setFlowOpen(true); };
-  const closeFlow = () => setFlowOpen(false);
+  const closeFlow = () => {
+    window.location.reload()
+    setFlowOpen(false);
+  } 
 
   const update = (key, val) => setForm((f) => ({ ...f, [key]: val }));
   const toggleFeature = (name) =>
@@ -65,11 +68,13 @@ export default function Landing() {
     setSubmitting(true);
     setError("");
     try {
-      await submitWaitlistEntry(form);
+      // await submitWaitlistEntry(form);
+      await sendToGoogleSheet(form);
       setStep(4);
     } catch (err) {
       console.error(err);
       setError("Something went wrong. Please try again.");
+      alert("Something went wrong. Please try again.");
     } finally {
       setSubmitting(false);
     }

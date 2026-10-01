@@ -83,6 +83,7 @@
 
 import { initializeApp } from "firebase/app";
 import { getFirestore, collection, addDoc, getDocs, query, orderBy, serverTimestamp } from "firebase/firestore";
+import { log } from "firebase/firestore/pipelines";
 
 const firebaseConfig = {
   apiKey: "AIzaSyCLIEnUTggjb9IxOJQoUohOkdt983SwdfA",
@@ -107,4 +108,19 @@ export async function getWaitlistEntries() {
   const q = query(collection(db, "waitlist"), orderBy("createdAt", "desc"));
   const snap = await getDocs(q);
   return snap.docs.map((d) => ({ id: d.id, ...d.data() }));
+}
+
+
+// SEND TO GOOGLESHEET 
+
+export const sendToGoogleSheet = async (form) => {
+  console.log(form);
+  
+    const response = await fetch(
+        "https://script.google.com/macros/s/AKfycbxdZ420V14KPN6_2xPIHwYGyD4dwtMp78Mf1CiUrR1mu7ZeCCl4Lggvr2M_PpP9skyz_w/exec", {
+            method: "POST",
+            body: JSON.stringify(form)
+        }
+    );
+    // const result = await response.json();
 }
