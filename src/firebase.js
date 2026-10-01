@@ -86,13 +86,13 @@ import { getFirestore, collection, addDoc, getDocs, query, orderBy, serverTimest
 import { log } from "firebase/firestore/pipelines";
 
 const firebaseConfig = {
-  apiKey: "AIzaSyCLIEnUTggjb9IxOJQoUohOkdt983SwdfA",
-  authDomain: "lectivio-wait-list.firebaseapp.com",
-  projectId: "lectivio-wait-list",
-  storageBucket: "lectivio-wait-list.firebasestorage.app",
-  messagingSenderId: "801823077720",
-  appId: "1:801823077720:web:5bd314150e0a06c250612d",
-  measurementId: "G-SPDPG8WYKHvb"
+  apiKey: import.meta.env.VITE_FIREBASE_API_KEY,
+  authDomain: import.meta.env.VITE_FIREBASE_AUTH_DOMAIN,
+  projectId: import.meta.env.VITE_FIREBASE_PROJECT_ID,
+  storageBucket: import.meta.env.VITE_FIREBASE_STORAGE_BUCKET,
+  messagingSenderId: import.meta.env.VITE_FIREBASE_MESSAGING_SENDER_ID,
+  appId: import.meta.env.VITE_FIREBASE_APP_ID,
+  measurementId: import.meta.env.VITE_FIREBASE_MEASUREMENT_ID
 };
 
 const app = initializeApp(firebaseConfig);
